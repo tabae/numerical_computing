@@ -8,7 +8,7 @@ default: $(EXE)
 test: $(EXE)
 	./$(EXE)
 
-$(EXE):
+$(EXE): $(SRC)
 	$(CC) -o $(EXE) $(FLAGS) $(SRC)
 
 clean:
