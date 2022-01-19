@@ -1,3 +1,6 @@
+#ifndef __DFT_HPP__
+#define __DFT_HPP__
+
 #include <iostream>
 #include <vector>
 #include <cassert>
@@ -20,7 +23,7 @@ vector<complex<T>> dft(const vector<complex<T>>& f_in) {
     return f_out;
 }
 
-bool test() {
+bool dft_test(bool log = false) {
     bool res = true;
     const int n_sample = 200;
     const double pi = acos(-1);
@@ -34,18 +37,19 @@ bool test() {
         for(int n = 0; n < n_sample; n++) {
             if(abs(f_out[n]) > 1e-9) {
                 if(abs(abs(f_out[n]) - n_sample) < 1e-9 && j == n) {
-                    cout << "[\e[0;32mSuccess\e[0m]\t"; 
+                    if(log) cout << "[\e[0;32mSuccess\e[0m]\t"; 
                 } else {
-                    cout << "[\e[0;31mFailed\e[0m]\t"; 
+                    if(log) cout << "[\e[0;31mFailed\e[0m]\t"; 
                     res = false;
                 }
-                cout << j << "," << n << ": " << f_out[n] << endl;
+                if(log) cout << j << "," << n << ": " << f_out[n] << endl;
             }
         }
     }
+    if(res) cout << "[\e[0;32mSuccess\e[0m]\t"; 
+    else cout << "[\e[0;31mFailed\e[0m]\t"; 
+    cout << "dft_test" << endl;
     return res;
 }
 
-int main() {
-    assert(test());
-}
+#endif
