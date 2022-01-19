@@ -5,7 +5,8 @@
 
 フーリエ変換
 -----------------------------
-- 離散フーリエ変換（愚直実装） [LINK](https://github.com/tabae/numerical_computing/tree/master/fourier_transform/dft)
+- 離散フーリエ変換（愚直実装） [LINK](https://github.com/tabae/numerical_computing/tree/master/fourier_transform/dft.cpp)
+- 離散フーリエ逆変換（愚直実装） [LINK](https://github.com/tabae/numerical_computing/tree/master/fourier_transform/idft.cpp)
 
 参考
 -----------------------------
