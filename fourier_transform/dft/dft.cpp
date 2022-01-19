@@ -43,7 +43,7 @@ bool test() {
             }
         }
     }
-    return true;
+    return res;
 }
 
 int main() {
